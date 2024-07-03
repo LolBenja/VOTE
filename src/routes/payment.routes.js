@@ -4,10 +4,13 @@ import {
   captureOrder,
   cancelPayment,
 } from "../controllers/payment.controller.js";
+const path = require('path');
 
 const router = Router();
 
-router.get("/", (req, res) => res.send('Hola'));
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  });
 
 router.post("/create-order", createOrder);
 
