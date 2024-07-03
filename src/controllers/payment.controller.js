@@ -49,7 +49,7 @@ export const createOrder = async (req, res) => {
         },
       }
     );
-    console.log("TURE")
+    console.log("TURE", PAYPAL_API, access_token)
 
     // make a request
     const response = await axios.post(
