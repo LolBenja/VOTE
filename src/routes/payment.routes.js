@@ -4,13 +4,19 @@ import {
   captureOrder,
   cancelPayment,
 } from "../controllers/payment.controller.js";
-const path = require('path');
+import { fileURLToPath } from 'url';
+import { resolve } from 'path';
 
 const router = Router();
 
+// Obtén la ruta absoluta del archivo HTML
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = resolve(__filename, '..', '..');
+
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-  });
+  res.sendFile(resolve(__dirname, 'public', 'index.html'));
+});
+
 
 router.post("/create-order", createOrder);
 
