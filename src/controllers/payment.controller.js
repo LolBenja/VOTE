@@ -61,7 +61,7 @@ export const createOrder = async (req, res) => {
         },
       }
     );
-
+    console.log("LLEGO")
 
     return res.json(response.data);
   } catch (error) {
