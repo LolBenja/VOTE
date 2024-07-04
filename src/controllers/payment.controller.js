@@ -18,9 +18,12 @@ export const createOrder = async (req, res) => {
           },
         },
       ],
+      experience_context: {
+        landing_page: "NO_PREFERENCE"
+      },
       application_context: {
         brand_name: "mycompany.com",
-        landing_page: "NO_PREFERENCE",
+        
         user_action: "PAY_NOW",
         return_url: `${HOST}/capture-order`,
         cancel_url: `${HOST}/cancel-order`,
@@ -56,6 +59,7 @@ export const createOrder = async (req, res) => {
       `https://api-m.sandbox.paypal.com/v2/checkout/orders`,
       order,
       {
+        
         headers: {
           Authorization: `Bearer ${access_token}`,
         },

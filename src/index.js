@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import path from "path";
-import { PORT } from "./config.js";
+import { HOST, PORT } from "./config.js";
 
 import paymentRoutes from "./routes/payment.routes.js";
 
